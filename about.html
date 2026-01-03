@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us | Athiyayam Trust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F766E',
+            gold: '#EAB308',
+            accent: '#65A30D',
+            dark: '#1F2937',
+            muted: '#6B7280',
+            light: '#F9FAF7'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+  /* --- TEXT ALTERNATING ANIMATION --- */
+
+/* English Text: Visible first, then hides */
+.animate-text-1 {
+    animation: fadeEnglish 6s infinite;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Tamil Text: Hidden first, then shows */
+.animate-text-2 {
+    animation: fadeTamil 6s infinite;
+}
+
+@keyframes fadeEnglish {
+    0%, 45% { opacity: 1; }  /* Visible for first 45% */
+    50%, 95% { opacity: 0; }  /* Hidden for second half */
+    100%     { opacity: 1; }
+}
+
+@keyframes fadeTamil {
+    0%, 45% { opacity: 0; }  /* Hidden for first 45% */
+    50%, 95% { opacity: 1; }  /* Visible for second half */
+    100%     { opacity: 0; }
+}
+</style>
+
+</head>
+
+<body class="bg-light font-body text-dark">
+
+<!-- NAVBAR -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" class="h-20" alt="Logo">
+        
+        <div class="font-heading text-xl text-primary grid">
+          
+          <h1 class="col-start-1 row-start-1 animate-text-1">
+            Athiyayam Trust
+          </h1>
+          
+          <h1 class="col-start-1 row-start-1 animate-text-2 opacity-0">
+            அத்தியாயம் அறக்கட்டளை
+          </h1>
+          
+        </div>
+      </a>
+
+
+    <nav class="hidden md:flex gap-8 font-medium items-center">
+      <a href="index.html#hero" class="hover:text-primary">Home</a>
+      <a href="about.html" class="text-primary font-semibold">About</a>
+      <a href="index.html#activities" class="hover:text-primary">Activities</a>
+      <a href="gallery.html" class="hover:text-primary">Gallery</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+      <a href="volunteer.html" class="hover:text-primary">Volunteer</a>
+      
+        <!-- Donate -->
+      <a href="donate.html"
+        class="px-5 py-2 rounded-full bg-primary text-white font-medium hover:opacity-90 transition">
+        Donate
+      </a>
+    </nav>
+
+    <button class="md:hidden text-3xl" onclick="toggleMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <a href="index.html#hero" class="block px-6 py-3">Home</a>
+    <a href="about.html" class="block px-6 py-3 font-semibold text-primary">About</a>
+    <a href="index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="gallery.html" class="block px-6 py-3">Gallery</a>
+    <a href="contact.html" class="block px-6 py-3">Contact</a>
+    <a href="volunteer.html" class="block px-6 py-3">Volunteer</a>
+    <a href="donate.html" class="block px-6 py-3">Donate</a>
+  </div>
+</header>
+
+<!-- ABOUT CONTENT -->
+<section class="relative py-24 overflow-hidden">
+
+  <!-- Soft background graphics -->
+  <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6">
+    <h2 class="font-heading text-3xl md:text-4xl text-primary text-center mb-14">
+      About Athiyayam Charitable Trust
+    </h2>
+
+    <!-- Content Grid -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- IMAGE -->
+      <div class="relative">
+        <img src="assets/About 4.jpg"
+             alt="About Athiyayam Trust"
+             class="rounded-3xl shadow-xl w-full object-cover">
+
+        <!-- Decorative border -->
+        <div class="absolute inset-0 rounded-3xl border-4 border-primary/20 pointer-events-none"></div>
+      </div>
+
+      <!-- TEXT -->
+      <div class="bg-white/80 backdrop-blur p-8 rounded-2xl shadow-lg border-l-4 border-accent">
+        <p class="text-muted leading-relaxed mb-6">
+          Athiyayam Charitable Trust is a non-profit organization dedicated to uplifting
+          underprivileged communities through education, healthcare, and social welfare initiatives.
+        </p>
+
+        <p class="text-muted leading-relaxed mb-6">
+          Established with a strong belief in compassion and service, the trust works towards
+          empowering individuals and families to lead dignified and independent lives.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div class="grid md:grid-cols-2 gap-8 mt-16">
+      <div class="bg-white p-8 rounded-2xl shadow border-t-4 border-primary">
+        <h3 class="font-heading text-xl text-primary mb-3">Our Vision</h3>
+        <p class="text-muted">
+          To build a society where every individual has access to education, healthcare,
+          and opportunities for growth.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl shadow border-t-4 border-gold">
+        <h3 class="font-heading text-xl text-primary mb-3">Our Mission</h3>
+        <p class="text-muted">
+          To serve communities with integrity, compassion, and commitment,
+          creating sustainable change and lasting impact.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER MESSAGE -->
+<section class="relative py-24 bg-white overflow-hidden">
+
+  <!-- Subtle background graphic -->
+  <div class="absolute -top-24 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+
+    <!-- Founder Image -->
+    <div class="relative">
+      <img src="assets/founder-athiyayam.png"
+           alt="Founder of Athiyayam Trust"
+           class="rounded-3xl shadow-xl w-full object-cover">
+      <div class="absolute -bottom-4 -right-4 w-full h-full border-4 border-gold/30 rounded-3xl -z-10"></div>
+    </div>
+
+    <!-- Message -->
+    <div>
+      <h3 class="font-heading text-3xl text-primary mb-6">
+        Message from the Founder
+      </h3>
+
+      <p class="text-muted text-lg leading-relaxed mb-6">
+        Athiyayam was born from a simple belief — that compassion, when practiced
+        consistently, can transform lives. Our journey has always been guided by
+        empathy, dignity, and responsibility towards society.
+      </p>
+
+      <p class="text-muted text-lg leading-relaxed mb-8">
+        Every initiative we undertake is rooted in listening to communities,
+        understanding their needs, and working together for sustainable change.
+      </p>
+
+      <div class="border-l-4 border-primary pl-4">
+        <p class="font-heading text-lg text-primary">
+          Founder Name
+        </p>
+        <p class="text-sm text-muted">
+          Founder & Managing Trustee
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OUR TEAM -->
+<section class="relative py-24 bg-light">
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h3 class="font-heading text-3xl text-primary mb-6">
+      Our Team
+    </h3>
+    <p class="text-muted max-w-2xl mx-auto mb-16">
+      A dedicated group of individuals working together with passion,
+      integrity, and commitment towards social upliftment.
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+
+      <!-- MEMBER -->
+      <div class="text-center">
+        <img src="assets/founder-athiyayam.png"
+             class="w-40 h-40 mx-auto rounded-full object-cover shadow mb-4">
+        <h4 class="font-heading text-lg text-primary">
+          Member Name
+        </h4>
+        <p class="text-sm text-muted">
+          Trustee
+        </p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/founder-athiyayam.png"
+             class="w-40 h-40 mx-auto rounded-full object-cover shadow mb-4">
+        <h4 class="font-heading text-lg text-primary">
+          Member Name
+        </h4>
+        <p class="text-sm text-muted">
+          Program Coordinator
+        </p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/founder-athiyayam.png"
+             class="w-40 h-40 mx-auto rounded-full object-cover shadow mb-4">
+        <h4 class="font-heading text-lg text-primary">
+          Member Name
+        </h4>
+        <p class="text-sm text-muted">
+          Operations Lead
+        </p>
+      </div>
+
+      <div class="text-center">
+        <img src="assets/founder-athiyayam.png"
+             class="w-40 h-40 mx-auto rounded-full object-cover shadow mb-4">
+        <h4 class="font-heading text-lg text-primary">
+          Member Name
+        </h4>
+        <p class="text-sm text-muted">
+          Volunteer Head
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="relative py-24 bg-white">
+
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="font-heading text-3xl text-primary text-center mb-16">
+      How We Work
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-10 text-center">
+
+      <div>
+        <ion-icon name="ear-outline" class="text-4xl text-primary mb-4"></ion-icon>
+        <h4 class="font-heading text-lg mb-2">Listen</h4>
+        <p class="text-muted text-sm">
+          Understanding real needs by engaging directly with communities.
+        </p>
+      </div>
+
+      <div>
+        <ion-icon name="construct-outline" class="text-4xl text-gold mb-4"></ion-icon>
+        <h4 class="font-heading text-lg mb-2">Act</h4>
+        <p class="text-muted text-sm">
+          Designing practical solutions with long-term impact.
+        </p>
+      </div>
+
+      <div>
+        <ion-icon name="leaf-outline" class="text-4xl text-accent mb-4"></ion-icon>
+        <h4 class="font-heading text-lg mb-2">Sustain</h4>
+        <p class="text-muted text-sm">
+          Ensuring continuity through partnerships and accountability.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-[#0B3C3A] text-gray-300 text-center py-8">
+  © 2025 Athiyayam Charitable Trust
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a id="whatsappBtn"
+   href="https://wa.me/919092919000"
+   class="hidden fixed bottom-32 right-6
+          bg-green-500 text-white
+          w-14 h-14 rounded-full
+          flex items-center justify-center
+          shadow-lg hover:scale-110 transition"
+   target="_blank">
+  <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+</a>
+
+
+
+<!-- SCROLL TO TOP Arrow -->
+<button id="scrollTopBtn"
+  onclick="scrollToTop()"
+  class="hidden fixed right-6 bottom-16 z-40
+         w-12 h-12 rounded-full
+         bg-gold text-dark
+         flex items-center justify-center
+         shadow-lg hover:opacity-90 transition
+         animate-bounceArrow">
+
+  <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
+</button>
+
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+</script>
+
+
+ <!-- SCRIPT FOR Whatsapp/Arrow icon-->
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden");
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    scrollBtn.classList.add("hidden");
+    whatsappBtn.classList.add("hidden");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>

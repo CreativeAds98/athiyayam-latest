@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Donate | Athiyayam Trust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F766E',
+            gold: '#EAB308',
+            accent: '#65A30D',
+            muted: '#6B7280',
+            light: '#F9FAF7'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+  /* --- TEXT ALTERNATING ANIMATION --- */
+
+/* English Text: Visible first, then hides */
+.animate-text-1 {
+    animation: fadeEnglish 6s infinite;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Tamil Text: Hidden first, then shows */
+.animate-text-2 {
+    animation: fadeTamil 6s infinite;
+}
+
+@keyframes fadeEnglish {
+    0%, 45% { opacity: 1; }  /* Visible for first 45% */
+    50%, 95% { opacity: 0; }  /* Hidden for second half */
+    100%     { opacity: 1; }
+}
+
+@keyframes fadeTamil {
+    0%, 45% { opacity: 0; }  /* Hidden for first 45% */
+    50%, 95% { opacity: 1; }  /* Visible for second half */
+    100%     { opacity: 0; }
+}
+</style>
+
+</head>
+
+<body class="bg-light font-body text-dark relative overflow-x-hidden">
+
+<!-- BACKGROUND GRAPHICS -->
+<div class="absolute top-0 -left-32 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute top-1/3 -right-32 w-[450px] h-[450px] bg-gold/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
+
+<!-- NAVBAR -->
+<header class="bg-white shadow sticky top-0 z-50 relative">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" class="h-20" alt="Logo">
+        
+        <div class="font-heading text-xl text-primary grid">
+          
+          <h1 class="col-start-1 row-start-1 animate-text-1">
+            Athiyayam Trust
+          </h1>
+          
+          <h1 class="col-start-1 row-start-1 animate-text-2 opacity-0">
+            அத்தியாயம் அறக்கட்டளை
+          </h1>
+          
+        </div>
+      </a>
+
+
+    <nav class="hidden md:flex gap-8 font-medium items-center">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="index.html#about" class="hover:text-primary">About</a>
+      <a href="index.html#activities" class="hover:text-primary">Activities</a>
+      <a href="gallery.html" class="hover:text-primary">Gallery</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+      <a href="volunteer.html" class="hover:text-primary">Volunteer</a>
+
+        <!-- Donate -->
+      <a href="donate.html"
+        class="px-5 py-2 rounded-full bg-primary text-white font-medium hover:opacity-90 transition">
+        Donate
+      </a>
+    </nav>
+
+    <button class="md:hidden text-3xl" onclick="toggleMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <a href="index.html" class="block px-6 py-3">Home</a>
+    <a href="index.html#about" class="block px-6 py-3">About</a>
+    <a href="index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="gallery.html" class="block px-6 py-3">Gallery</a>
+    <a href="contact.html" class="block px-6 py-3">Contact</a>
+    <a href="volunteer.html" class="block px-6 py-3">Volunteer</a>
+    <a href="donate.html" class="block px-6 py-3 font-semibold text-primary">Donate</a>
+  </div>
+</header>
+
+<!-- DONATE FORM -->
+<section class="relative py-24">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <h2 class="font-heading text-3xl text-primary text-center mb-12">
+      Make a Donation
+    </h2>
+
+    <form class="relative bg-white/85 backdrop-blur-lg p-10 rounded-3xl shadow-xl border border-primary/20 space-y-6">
+
+      <!-- Accent line -->
+      <span class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gold rounded-full"></span>
+
+      <div>
+        <label class="text-sm">Full Name</label>
+        <input required class="w-full px-4 py-3 border rounded-lg">
+      </div>
+
+      <div>
+        <label class="text-sm">Email</label>
+        <input type="email" required class="w-full px-4 py-3 border rounded-lg">
+      </div>
+
+      <div>
+        <label class="text-sm">Donation Amount (₹)</label>
+        <input type="number" required class="w-full px-4 py-3 border rounded-lg">
+      </div>
+
+      <button class="w-full bg-gold text-dark py-3 rounded-full font-medium hover:scale-105 transition">
+        Proceed to Donate
+      </button>
+
+      <p class="text-xs text-muted text-center">
+        Secure payment gateway integration coming soon.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- SECTION DIVIDER -->
+<div class="flex justify-center my-20">
+  <span class="w-16 h-px bg-primary"></span>
+  <span class="w-3 h-3 bg-gold rounded-full mx-3"></span>
+  <span class="w-16 h-px bg-primary"></span>
+</div>
+
+<!-- BANK DETAILS -->
+<section class="relative py-24">
+  <div class="absolute top-16 left-0 w-48 h-px bg-primary/30"></div>
+  <div class="absolute bottom-16 right-0 w-64 h-px bg-gold/40"></div>
+
+  <div class="relative max-w-4xl mx-auto px-6">
+    <div class="bg-white p-10 rounded-3xl shadow-lg border-l-4 border-primary">
+
+      <h3 class="font-heading text-3xl text-primary text-center mb-10">
+        Bank Account Details
+      </h3>
+
+      <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <div><span class="text-muted">Account Name</span><p class="font-medium">Athiyayam Charitable Trust</p></div>
+        <div><span class="text-muted">Bank Name</span><p class="font-medium">__________ Bank</p></div>
+        <div><span class="text-muted">Account Number</span><p class="font-medium">XXXXXXXXXXXX</p></div>
+        <div><span class="text-muted">IFSC Code</span><p class="font-medium">XXXXXXXX</p></div>
+        <div><span class="text-muted">Branch</span><p class="font-medium">Coimbatore</p></div>
+        <div><span class="text-muted">Account Type</span><p class="font-medium">Savings / Current</p></div>
+      </div>
+
+      <p class="text-xs text-muted text-center mt-8">
+        For donation receipts, contact <strong>info@athiyayamtrust.org</strong>
+      </p>
+
+      <!-- UPI -->
+      <div class="mt-16 text-center">
+        <h4 class="font-heading text-xl text-primary mb-4">Donate via UPI</h4>
+        <img src="assets/QR-code.png" class="w-44 h-44 mx-auto rounded-2xl shadow border">
+        <p class="mt-4 font-medium">athiyayamtrust@upi</p>
+
+        <button onclick="copyUPI()"
+          class="mt-4 inline-flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full text-sm">
+          <ion-icon name="copy-outline"></ion-icon>
+          Copy UPI ID
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- IN-KIND DONATIONS -->
+<section class="relative py-24 bg-light">
+
+  <!-- Decorative lines -->
+  <div class="absolute top-20 left-0 w-48 h-px bg-primary/30"></div>
+  <div class="absolute bottom-20 right-0 w-64 h-px bg-gold/40"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6">
+
+    <h3 class="font-heading text-3xl text-primary text-center mb-8">
+      Support Through Useful Products
+    </h3>
+
+    <p class="text-muted text-center max-w-3xl mx-auto mb-14 text-lg">
+      Apart from monetary donations, we also gladly accept
+      <strong>useful products and essential items</strong>
+      that directly support our beneficiaries and community programs.
+    </p>
+
+    <!-- Product Types -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Education -->
+      <div class="bg-white p-8 rounded-2xl shadow border-t-4 border-primary text-center">
+        <ion-icon name="school-outline"
+                  class="text-4xl text-primary mb-4"></ion-icon>
+        <h4 class="font-heading text-lg text-primary mb-2">
+          Educational Materials
+        </h4>
+        <p class="text-sm text-muted">
+          Books, notebooks, school bags, stationery,
+          uniforms, and learning aids.
+        </p>
+      </div>
+
+      <!-- Health -->
+      <div class="bg-white p-8 rounded-2xl shadow border-t-4 border-gold text-center">
+        <ion-icon name="medkit-outline"
+                  class="text-4xl text-gold mb-4"></ion-icon>
+        <h4 class="font-heading text-lg text-primary mb-2">
+          Healthcare Essentials
+        </h4>
+        <p class="text-sm text-muted">
+          First-aid kits, hygiene products,
+          masks, sanitary items, and basic medicines.
+        </p>
+      </div>
+
+      <!-- Community -->
+      <div class="bg-white p-8 rounded-2xl shadow border-t-4 border-accent text-center">
+        <ion-icon name="people-outline"
+                  class="text-4xl text-accent mb-4"></ion-icon>
+        <h4 class="font-heading text-lg text-primary mb-2">
+          Community & Daily Needs
+        </h4>
+        <p class="text-sm text-muted">
+          Clothes (new/gently used), food supplies,
+          blankets, household essentials.
+        </p>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+
+<section class="py-20 bg-white border-t border-gray-100">
+  <div class="max-w-4xl mx-auto px-6">
+    
+    <div class="text-center mb-12">
+      <h2 class="font-heading text-3xl text-primary font-bold">Donate Materials & Products</h2>
+      <div class="h-1 w-20 bg-gold mx-auto mt-3 rounded"></div>
+      <p class="text-gray-600 mt-4">
+        We gratefully accept material contributions. Please fill out the form below to schedule a drop-off or pickup.
+      </p>
+    </div>
+
+    <div class="bg-light p-8 md:p-10 rounded-2xl shadow-lg border border-gray-200">
+      
+      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="grid md:grid-cols-2 gap-6">
+
+        <div class="md:col-span-2">
+          <label class="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">
+            Select Donation Type
+          </label>
+          <div class="relative">
+            <select name="donation_type" class="w-full p-4 border border-gray-300 rounded-lg appearance-none bg-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary cursor-pointer text-gray-700 font-medium">
+              <option value="" disabled selected>-- Choose an Item --</option>
+              <option value="Clothes">Clothes (New / Gently Used)</option>
+              <option value="Food">Dry Ration / Groceries</option>
+              <option value="Books">Books & Stationery</option>
+              <option value="Medical">Medical Equipment</option>
+              <option value="Furniture">Furniture / Electronics</option>
+              <option value="Others">Others</option>
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-primary">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">Your Name</label>
+          <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Enter Full Name" required>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">Phone Number</label>
+          <input type="tel" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="+91 99999 99999" required>
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">
+            Message / Pickup Address
+          </label>
+          <textarea name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Please describe the items quantity or provide your address for pickup..." required></textarea>
+        </div>
+
+        <div class="md:col-span-2 mt-2">
+          <button type="submit" class="w-full bg-dark font-bold py-4 rounded-lg hover:bg-primary transition duration-300 shadow-md flex justify-center items-center gap-2">
+            <ion-icon name="paper-plane-outline" class="text-xl"></ion-icon>
+            SEND DONATION REQUEST
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="bg-[#0B3C3A] text-gray-300 text-center py-8 relative">
+  © 2025 Athiyayam Charitable Trust
+</footer>
+
+
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+function copyUPI() {
+  navigator.clipboard.writeText("athiyayamtrust@upi");
+  alert("UPI ID copied");
+}
+</script>
+
+
+<!-- SCRIPT FOR Whatsapp/Arrow icon-->
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden");
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    scrollBtn.classList.add("hidden");
+    whatsappBtn.classList.add("hidden");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+</body>
+</html>

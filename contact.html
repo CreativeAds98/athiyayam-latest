@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us | Athiyayam  Trust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F766E',
+            gold: '#EAB308',
+            accent: '#65A30D',
+            dark: '#1F2937',
+            muted: '#6B7280',
+            light: '#F9FAF7'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+  /* --- TEXT ALTERNATING ANIMATION --- */
+
+/* English Text: Visible first, then hides */
+.animate-text-1 {
+    animation: fadeEnglish 6s infinite;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Tamil Text: Hidden first, then shows */
+.animate-text-2 {
+    animation: fadeTamil 6s infinite;
+}
+
+@keyframes fadeEnglish {
+    0%, 45% { opacity: 1; }  /* Visible for first 45% */
+    50%, 95% { opacity: 0; }  /* Hidden for second half */
+    100%     { opacity: 1; }
+}
+
+@keyframes fadeTamil {
+    0%, 45% { opacity: 0; }  /* Hidden for first 45% */
+    50%, 95% { opacity: 1; }  /* Visible for second half */
+    100%     { opacity: 0; }
+}
+</style>
+
+</head>
+
+<body class="bg-light font-body text-dark">
+
+<!-- NAVBAR -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" class="h-20" alt="Logo">
+        
+        <div class="font-heading text-xl text-primary grid">
+          
+          <h1 class="col-start-1 row-start-1 animate-text-1">
+            Athiyayam Trust
+          </h1>
+          
+          <h1 class="col-start-1 row-start-1 animate-text-2 opacity-0">
+            அத்தியாயம் அறக்கட்டளை
+          </h1>
+          
+        </div>
+      </a>
+
+
+    <nav class="hidden md:flex gap-8 font-medium items-center">
+      <a href="index.html#hero" class="hover:text-primary">Home</a>
+      <a href="about.html" class="hover:text-primary">About</a>
+      <a href="index.html#activities" class="hover:text-primary">Activities</a>
+      <a href="gallery.html" class="hover:text-primary">Gallery</a>
+      <a href="contact.html" class="text-primary font-semibold">Contact</a>
+      <a href="volunteer.html" class="hover:text-primary">Volunteer</a>
+        <!-- Donate -->
+      <a href="donate.html"
+        class="px-5 py-2 rounded-full bg-primary text-white font-medium hover:opacity-90 transition">
+        Donate
+      </a>
+    </nav>
+
+    <button class="md:hidden text-3xl" onclick="toggleMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <a href="index.html#hero" class="block px-6 py-3">Home</a>
+    <a href="about.html" class="block px-6 py-3">About</a>
+    <a href="index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="gallery.html" class="block px-6 py-3">Gallery</a>
+    <a href="contact.html" class="block px-6 py-3">Contact</a>
+    <a href="volunteer.html" class="block px-6 py-3">Volunteer</a>
+    <a href="donate.html" class="block px-6 py-3">Donate</a>
+  </div>
+</header>
+
+<!-- CONTACT -->
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+    
+    <!-- INFO -->
+      <!-- CONTACT INFO (LEFT) -->
+      <div>
+        <h2 class="font-heading text-3xl text-primary mb-6">
+          Get in Touch
+        </h2>
+
+        <p class="text-muted mb-6">
+          We would love to hear from you. Reach out for enquiries,
+          partnerships, or support.
+        </p>
+
+        <ul class="space-y-4 text-muted mb-8">  
+          <li><strong>Address:</strong> Coimbatore, Tamil Nadu, India</li>
+          <li><strong>Email:</strong> contact@athiyayam.com</li>
+          <li><strong>Phone:</strong> +91 90929 19000</li>
+          <li><strong>Phone:</strong> +91 81243 81423</li>
+          <li><strong>Working Hours:</strong> Mon - Fri, 9 AM - 6 PM</li>
+        </ul>
+
+        <!-- MAP (BELOW PHONE) -->
+        <div class="mt-8 rounded-2xl overflow-hidden shadow-lg border border-primary/20">
+          <iframe
+            src="https://www.google.com/maps?q=Coimbatore,Tamil Nadu&output=embed"
+            class="w-full h-64 border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+
+    <!-- FORM -->
+    <form class="bg-white p-8 rounded-2xl shadow-lg space-y-6">
+      <div>
+        <label class="text-sm">Name</label>
+        <input required class="w-full px-4 py-3 border rounded-lg">
+      </div>
+
+      <div>
+        <label class="text-sm">Email</label>
+        <input type="email" required class="w-full px-4 py-3 border rounded-lg">
+      </div>
+
+      <div>
+        <label class="text-sm">Message</label>
+        <textarea rows="4" required class="w-full px-4 py-3 border rounded-lg"></textarea>
+      </div>
+
+      <button class="bg-primary text-white px-8 py-3 rounded-full hover:opacity-90 transition">
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<footer class="bg-[#0B3C3A] text-gray-300 text-center py-8">
+  © 2025 Athiyayam Charitable Trust
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>

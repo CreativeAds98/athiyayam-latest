@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>Athiyayam Trust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+  
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F766E',
+            gold: '#EAB308',
+            accent: '#65A30D',
+            dark: '#1F2937',
+            muted: '#6B7280',
+            light: '#F9FAF7'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Animations for donate section -->
+ <style>
+/* Base floating image */
+.floating-img {
+  position: absolute;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Bounce animations */
+@keyframes bounceSlow {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes bounceMedium {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-35px); }
+}
+
+@keyframes bounceFast {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+}
+
+.bounce-slow {
+  animation: bounceSlow 6s ease-in-out infinite;
+}
+
+.bounce-medium {
+  animation: bounceMedium 4.5s ease-in-out infinite;
+}
+
+.bounce-fast {
+  animation: bounceFast 3.5s ease-in-out infinite;
+}
+</style>
+
+  <!-- Custom Animations for scroll up -->
+<style>
+@keyframes bounceArrow {
+  0%,100% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}
+.animate-bounceArrow {
+  animation: bounceArrow 1.5s ease-in-out infinite;
+}
+</style>
+
+
+<!-- Hero Style -->
+<style>
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1.2s ease-in-out, transform 6s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Dots */
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.5);
+  transition: all 0.3s;
+}
+.hero-dot.active {
+  background: #EAB308;
+  transform: scale(1.3);
+}
+</style>
+<style>
+  /* --- TEXT ALTERNATING ANIMATION --- */
+
+/* English Text: Visible first, then hides */
+.animate-text-1 {
+    animation: fadeEnglish 6s infinite;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Tamil Text: Hidden first, then shows */
+.animate-text-2 {
+    animation: fadeTamil 6s infinite;
+}
+
+@keyframes fadeEnglish {
+    0%, 45% { opacity: 1; }  /* Visible for first 45% */
+    50%, 95% { opacity: 0; }  /* Hidden for second half */
+    100%     { opacity: 1; }
+}
+
+@keyframes fadeTamil {
+    0%, 45% { opacity: 0; }  /* Hidden for first 45% */
+    50%, 95% { opacity: 1; }  /* Visible for second half */
+    100%     { opacity: 0; }
+}
+</style>
+
+
+
+</head>
+
+<body class="bg-light font-body text-dark">
+
+<!-- NAVBAR -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" class="h-20" alt="Logo">
+        
+        <div class="font-heading text-xl text-primary grid">
+          
+          <h1 class="col-start-1 row-start-1 animate-text-1">
+            Athiyayam Trust
+          </h1>
+          
+          <h1 class="col-start-1 row-start-1 animate-text-2 opacity-0">
+            அத்தியாயம் அறக்கட்டளை
+          </h1>
+          
+        </div>
+      </a>
+
+    <nav class="hidden md:flex gap-8 font-medium items-center">
+      <a href="index.html" class="text-primary font-semibold">Home</a>
+      <a href="about.html" class="hover:text-primary">About</a>
+      <a href="index.html#activities" class="hover:text-primary">Activities</a>
+      <a href="gallery.html" class="hover:text-primary">Gallery</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+      <a href="volunteer.html" class="hover:text-primary">Volunteer</a>
+        <!-- Donate -->
+      <a href="donate.html"
+        class="px-5 py-2 rounded-full bg-primary text-white font-medium hover:opacity-90 transition">
+        Donate
+      </a>
+    </nav>
+
+    <button class="md:hidden text-3xl" onclick="toggleMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <a href="index.html#hero" class="block px-6 py-3">Home</a>
+    <a href="about.html" class="block px-6 py-3">About</a>
+    <a href="index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="gallery.html" class="block px-6 py-3 ">Gallery</a>
+    <a href="contact.html" class="block px-6 py-3">Contact</a>
+    <a href="volunteer.html" class="block px-6 py-3">Volunteer</a>
+    <a href="donate.html" class="block px-6 py-3">Donate</a>
+  </div>
+</header>
+
+
+
+<!-- HERO SECTION -->
+<section id="hero" class="relative overflow-hidden h-[75vh] md:h-[90vh]">
+
+  <!-- SLIDES -->
+  <div id="heroSlider" class="absolute inset-0">
+
+    <div class="hero-slide active"
+         data-title="Empowering Lives, Building Hope"
+         data-text="Athiyayam Charitable Trust works towards education, healthcare, empowerment, and community development."
+         style="background-image:url('assets/banner/Banner\ 1.jpg')"></div>
+
+    <div class="hero-slide"
+         data-title="Education • Health • Empowerment"
+         data-text="Creating opportunities for children, women, and underserved communities."
+         style="background-image:url('assets/banner/Banner\ 4\ .jpg')"></div>
+
+    <div class="hero-slide"
+         data-title="Together We Create Change"
+         data-text="Join hands with us to uplift lives and build a better tomorrow."
+         style="background-image:url('assets/banner/banner\ 6.jpg')"></div>
+
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/55"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+    <div class="max-w-2xl text-white">
+
+      <h1 id="heroTitle"
+          class="font-heading text-4xl md:text-5xl mb-6 opacity-0 translate-y-6 transition-all duration-700">
+      </h1>
+
+      <p id="heroText"
+         class="text-lg mb-8 opacity-0 translate-y-6 transition-all duration-700 delay-150">
+      </p>
+
+      <a href="donate.html"
+         class="inline-block bg-gold text-dark px-8 py-3 rounded-full font-medium hover:opacity-90 transition">
+        Donate Now
+      </a>
+    </div>
+  </div>
+
+  <!-- ARROWS -->
+  <button onclick="prevSlide()"
+          class="absolute left-6 top-1/2 -translate-y-1/2 z-20
+                 w-12 h-12 rounded-full bg-white/20 text-white
+                 flex items-center justify-center hover:bg-white/40">
+    <ion-icon name="chevron-back-outline" class="text-2xl"></ion-icon>
+  </button>
+
+  <button onclick="nextSlide()"
+          class="absolute right-6 top-1/2 -translate-y-1/2 z-20
+                 w-12 h-12 rounded-full bg-white/20 text-white
+                 flex items-center justify-center hover:bg-white/40">
+    <ion-icon name="chevron-forward-outline" class="text-2xl"></ion-icon>
+  </button>
+
+  <!-- DOTS -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+    <button class="hero-dot active" onclick="goToSlide(0)"></button>
+    <button class="hero-dot" onclick="goToSlide(1)"></button>
+    <button class="hero-dot" onclick="goToSlide(2)"></button>
+  </div>
+
+</section>
+
+
+
+<!-- WAVE -->
+<svg viewBox="0 0 1440 90" class="-mt-1">
+  <path fill="#F9FAF7" d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,0L0,0Z"></path>
+</svg>
+
+<!-- ABOUT -->
+<section id="about" class="relative py-28 bg-light overflow-hidden">
+
+  <!-- Decorative background lines -->
+  <div class="absolute top-20 left-0 w-56 h-px bg-primary/30"></div>
+  <div class="absolute bottom-28 right-0 w-64 h-px bg-gold/40"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+
+      <!-- IMAGE COLUMN -->
+      <div class="relative">
+        <img src="assets/About 3.jpg"
+             alt="Athiyayam Trust Activities"
+             class="rounded-3xl shadow-xl w-full object-cover">
+
+        <!-- Border frame -->
+        <div class="absolute -top-4 -left-4 w-full h-full border-4 border-primary/30 rounded-3xl -z-10"></div>
+      </div>
+
+      <!-- CONTENT COLUMN -->
+      <div>
+
+        <!-- Heading with icon & line -->
+        <div class="flex items-center gap-4 mb-6">
+          <span class="w-10 h-px bg-primary"></span>
+          <ion-icon name="sparkles-outline" class="text-primary text-xl"></ion-icon>
+          <span class="w-10 h-px bg-primary"></span>
+        </div>
+
+        <h3 class="font-heading text-3xl md:text-4xl text-primary mb-6">
+          About Athiyayam
+        </h3>
+
+        <p class="text-muted text-lg leading-relaxed mb-10">
+          Athiyayam Charitable Trust works to uplift lives through compassion,
+          education, healthcare, and community development initiatives. Our focus
+          is on dignity, care, and long-term social impact.
+        </p>
+
+        <!-- Icon highlights -->
+        <div class="grid grid-cols-2 gap-8">
+
+          <div class="flex items-center gap-4">
+            <ion-icon name="heart-outline" class="text-3xl text-primary"></ion-icon>
+            <span class="h-px w-8 bg-primary"></span>
+            <p class="text-sm text-muted">Compassion-driven work</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <ion-icon name="school-outline" class="text-3xl text-gold"></ion-icon>
+            <span class="h-px w-8 bg-gold"></span>
+            <p class="text-sm text-muted">Education support</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <ion-icon name="medkit-outline" class="text-3xl text-accent"></ion-icon>
+            <span class="h-px w-8 bg-accent"></span>
+            <p class="text-sm text-muted">Healthcare initiatives</p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <ion-icon name="people-outline" class="text-3xl text-primary"></ion-icon>
+            <span class="h-px w-8 bg-primary"></span>
+            <p class="text-sm text-muted">Community development</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WAVE -->
+<svg viewBox="0 0 1440 90">
+  <path fill="#ffffff" d="M0,64L80,58.7C160,53,320,43,480,37.3C640,32,800,32,960,37.3C1120,43,1280,53,1360,58.7L1440,64L1440,0L0,0Z"></path>
+</svg>
+
+<!-- ACTIVITIES -->
+<section id="activities" class="relative bg-white py-24">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <h3 class="font-heading text-3xl md:text-4xl text-primary text-center mb-6">
+      Our Activities
+    </h3>
+
+    <p class="text-muted text-center max-w-3xl mx-auto mb-16">
+      Athiyayam Charitable Trust works across education, healthcare, empowerment,
+      and community development to create inclusive and sustainable social impact.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- EDUCATION -->
+      <div class="p-8 rounded-2xl shadow border-t-4 border-primary bg-light">
+        <h4 class="font-heading text-xl mb-4">Education & Child Development</h4>
+        <ul class="space-y-2 text-muted text-sm list-disc list-inside">
+          <li>Education for All</li>
+          <li>Education for Street Children</li>
+          <li>Child Welfare & Protection</li>
+          <li>Skill Development & Livelihood Generation</li>
+        </ul>
+      </div>
+
+      <!-- HEALTH -->
+      <div class="p-8 rounded-2xl shadow border-t-4 border-gold bg-light">
+        <h4 class="font-heading text-xl mb-4">Healthcare & Nutrition</h4>
+        <ul class="space-y-2 text-muted text-sm list-disc list-inside">
+          <li>Healthcare Access & Medical Camps</li>
+          <li>Maternal & Adolescent Health</li>
+          <li>Nutrition for Women & Children</li>
+          <li>Rural Water, Sanitation & Hygiene (WASH)</li>
+        </ul>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="p-8 rounded-2xl shadow border-t-4 border-accent bg-light">
+        <h4 class="font-heading text-xl mb-4">Community & Social Welfare</h4>
+        <ul class="space-y-2 text-muted text-sm list-disc list-inside">
+          <li>Women Empowerment</li>
+          <li>Community Welfare & Social Development</li>
+          <li>Minority Welfare Programs</li>
+          <li>Senior Citizen Care</li>
+        </ul>
+      </div>
+
+      <!-- ENVIRONMENT -->
+      <div class="p-8 rounded-2xl shadow border-t-4 border-primary bg-light">
+        <h4 class="font-heading text-xl mb-4">Environment & Culture</h4>
+        <ul class="space-y-2 text-muted text-sm list-disc list-inside">
+          <li>Environmental Care & Awareness</li>
+          <li>Cultural Heritage Promotion</li>
+        </ul>
+      </div>
+
+          <!-- DISASTER -->
+          <div class="p-8 rounded-2xl shadow border-t-4 border-gold bg-light">
+            <h4 class="font-heading text-xl mb-4">
+              Disaster Relief 
+            </h4>
+
+            <ul class="space-y-2 text-muted text-sm list-disc list-inside">
+              <li>Immediate relief during natural & man-made disasters</li>
+              <li>Distribution of food, water, clothing & essentials</li>
+            </ul>
+          </div>
+
+
+              <!-- DISABILITY SUPPORT -->
+        <div class="p-8 rounded-2xl shadow border-t-4 border-primary bg-light">
+          <h4 class="font-heading text-xl mb-4">
+            Disability Support & Inclusion
+          </h4>
+          <ul class="space-y-2 text-muted text-sm list-disc list-inside">
+            <li>Inclusive education & learning support</li>
+            <li>Assistive devices & accessibility support</li>
+            <li>Skill training & livelihood opportunities</li>
+            <li>Awareness programs for social inclusion</li>
+          </ul>
+        </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+<!-- IMPACT COUNTERS -->
+<section class="relative py-24 bg-white overflow-hidden">
+
+  <!-- Soft background accents -->
+  <div class="absolute -top-20 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 -right-20 w-80 h-80 bg-gold/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <h2 class="font-heading text-3xl md:text-4xl text-primary text-center mb-16">
+      Our Impact So Far
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+      <!-- YEARS -->
+      <div class="bg-light p-8 rounded-2xl shadow border-b-4 border-primary">
+        <ion-icon name="time-outline" class="text-4xl text-primary mb-4"></ion-icon>
+        <h3 class="font-heading text-4xl text-primary">
+          <span class="counter" data-target="10">0</span>+
+        </h3>
+        <p class="text-muted mt-2">Years of Service</p>
+      </div>
+
+      <!-- LIVES -->
+      <div class="bg-light p-8 rounded-2xl shadow border-b-4 border-gold">
+        <ion-icon name="heart-outline" class="text-4xl text-gold mb-4"></ion-icon>
+        <h3 class="font-heading text-4xl text-primary">
+          <span class="counter" data-target="1000">0</span>+
+        </h3>
+        <p class="text-muted mt-2">Lives Impacted</p>
+      </div>
+
+      <!-- VOLUNTEERS -->
+      <div class="bg-light p-8 rounded-2xl shadow border-b-4 border-accent">
+        <ion-icon name="people-outline" class="text-4xl text-accent mb-4"></ion-icon>
+        <h3 class="font-heading text-4xl text-primary">
+          <span class="counter" data-target="120">0</span>+
+        </h3>
+        <p class="text-muted mt-2">Volunteers</p>
+      </div>
+
+      <!-- PROGRAMS -->
+      <div class="bg-light p-8 rounded-2xl shadow border-b-4 border-primary">
+        <ion-icon name="school-outline" class="text-4xl text-primary mb-4"></ion-icon>
+        <h3 class="font-heading text-4xl text-primary">
+          <span class="counter" data-target="35">0</span>+
+        </h3>
+        <p class="text-muted mt-2">Programs Conducted</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- EVENTS & ACTIVITIES -->
+<section id="events" class="relative py-24 bg-white overflow-hidden">
+
+  <!-- Soft background accents -->
+  <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h3 class="font-heading text-3xl md:text-4xl text-primary mb-4">
+        Events & Activities
+      </h3>
+      <p class="text-muted max-w-2xl mx-auto">
+        Our ongoing initiatives and events focused on education,
+        healthcare, and community upliftment.
+      </p>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- EVENT 1 -->
+      <div class="bg-light p-8 rounded-2xl shadow hover:shadow-xl transition border-t-4 border-primary flex flex-col">
+        <ion-icon name="school-outline"
+                  class="text-4xl text-primary mb-5"></ion-icon>
+
+        <h4 class="font-heading text-xl text-primary mb-3">
+          Education Support Camp
+        </h4>
+
+        <p class="text-muted text-sm mb-6">
+          Providing study materials, guidance, and mentorship
+          to students from underprivileged backgrounds.
+        </p>
+
+        <div class="flex items-center justify-between text-xs text-muted mb-6">
+          <span>📍 Coimbatore</span>
+          <span>📅 March 2025</span>
+        </div>
+
+        <!-- Button -->
+        <a href="events/events-education.html"
+           class="mt-auto inline-flex items-center justify-center gap-2
+                  border border-primary text-primary
+                  px-5 py-2 rounded-full text-sm
+                  hover:bg-primary hover:text-white transition">
+          View Details
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </a>
+      </div>
+
+      <!-- EVENT 2 -->
+      <div class="bg-light p-8 rounded-2xl shadow hover:shadow-xl transition border-t-4 border-gold flex flex-col">
+        <ion-icon name="medkit-outline"
+                  class="text-4xl text-gold mb-5"></ion-icon>
+
+        <h4 class="font-heading text-xl text-primary mb-3">
+          Free Medical Camp
+        </h4>
+
+        <p class="text-muted text-sm mb-6">
+          Health checkups and awareness programs conducted
+          in rural and semi-urban communities.
+        </p>
+
+        <div class="flex items-center justify-between text-xs text-muted mb-6">
+          <span>📍 Tiruppur</span>
+          <span>📅 April 2025</span>
+        </div>
+
+        <!-- Button -->
+        <a href="event-medical.html"
+           class="mt-auto inline-flex items-center justify-center gap-2
+                  border border-gold text-gold
+                  px-5 py-2 rounded-full text-sm
+                  hover:bg-gold hover:text-dark transition">
+          View Details
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </a>
+      </div>
+
+      <!-- EVENT 3 -->
+      <div class="bg-light p-8 rounded-2xl shadow hover:shadow-xl transition border-t-4 border-accent flex flex-col">
+        <ion-icon name="people-outline"
+                  class="text-4xl text-accent mb-5"></ion-icon>
+
+        <h4 class="font-heading text-xl text-primary mb-3">
+          Community Welfare Drive
+        </h4>
+
+        <p class="text-muted text-sm mb-6">
+          Distribution of essentials and engagement programs
+          aimed at supporting families in need.
+        </p>
+
+        <div class="flex items-center justify-between text-xs text-muted mb-6">
+          <span>📍 Erode</span>
+          <span>📅 Ongoing</span>
+        </div>
+
+        <!-- Button -->
+        <a href="#"
+           class="mt-auto inline-flex items-center justify-center gap-2
+                  border border-accent text-accent
+                  px-5 py-2 rounded-full text-sm
+                  hover:bg-accent hover:text-white transition">
+          View Details
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- View All -->
+    <div class="text-center mt-16">
+      <a href="events.html"
+         class="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full hover:opacity-90 transition">
+        View All Activities
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- DONATE CTA -->
+<section id="donate"
+  class="relative overflow-hidden py-32 text-center
+         bg-gradient-to-r from-primary via-emerald-800 to-primary text-white">
+
+  <!-- FLOATING PNG IMAGES -->
+  <img src="assets/icon-3.png"
+       class="floating-img w-16 top-20 left-16 bounce-slow">
+
+  <img src="assets/icon-2.png"
+       class="floating-img w-14 top-1/3 right-24 bounce-medium">
+
+  <img src="assets/icon-5.png"
+       class="floating-img w-20 bottom-24 left-1/4 bounce-fast">
+
+  <img src="assets/icon-4.png"
+       class="floating-img w-12 top-1/4 left-2/3 bounce-slow">
+
+  <img src="assets/icon-1.png"
+       class="floating-img w-18 bottom-16 right-1/3 bounce-medium">
+
+  <!-- SOFT GLOW BACKGROUND -->
+  <div class="absolute -top-24 -left-24 w-96 h-96 bg-gold/20 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-3xl mx-auto px-6">
+    <h3 class="font-heading text-4xl md:text-5xl mb-6">
+      Be a Part of the Change
+    </h3>
+
+    <p class="text-lg md:text-xl opacity-90 mb-10">
+      Your support can light many lives and create lasting impact.
+    </p>
+
+    <a href="donate.html"
+       class="inline-flex items-center gap-3 bg-gold text-dark
+              px-12 py-4 rounded-full text-lg font-medium
+              shadow-xl hover:scale-105 transition">
+
+      Donate Now
+    </a>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="relative py-24 bg-light overflow-hidden">
+
+  <!-- Background accents -->
+  <div class="absolute -top-20 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 -right-20 w-80 h-80 bg-gold/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h3 class="font-heading text-3xl md:text-4xl text-primary mb-4">
+        What People Say
+      </h3>
+      <p class="text-muted max-w-2xl mx-auto">
+        Real experiences from communities, volunteers, and supporters
+        who believe in Athiyayam Trust.
+      </p>
+    </div>
+
+    <!-- Slider Wrapper -->
+    <div class="overflow-hidden">
+      <div id="reviewSlider"
+           class="flex transition-transform duration-700 ease-in-out">
+
+        <!-- REVIEW 1 -->
+        <div class="review-slide min-w-full md:min-w-[33.333%] px-4">
+          <div class="bg-white p-8 rounded-2xl shadow h-full">
+
+            <div class="flex justify-center mb-4 text-gold">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="text-muted leading-relaxed mb-6">
+              Athiyayam Trust has brought meaningful change to our community.
+              Their education support has transformed many young lives.
+            </p>
+
+            <div class="border-t pt-4 text-center">
+              <p class="font-heading text-primary">R. Kumar</p>
+              <p class="text-sm text-muted">Community Member</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVIEW 2 -->
+        <div class="review-slide min-w-full md:min-w-[33.333%] px-4">
+          <div class="bg-white p-8 rounded-2xl shadow h-full">
+
+            <div class="flex justify-center mb-4 text-gold">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+
+            <p class="text-muted leading-relaxed mb-6">
+              Volunteering with Athiyayam has been inspiring.
+              The team genuinely listens and works with compassion.
+            </p>
+
+            <div class="border-t pt-4 text-center">
+              <p class="font-heading text-primary">S. Priya</p>
+              <p class="text-sm text-muted">Volunteer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVIEW 3 -->
+        <div class="review-slide min-w-full md:min-w-[33.333%] px-4">
+          <div class="bg-white p-8 rounded-2xl shadow h-full">
+
+            <div class="flex justify-center mb-4 text-gold">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="text-muted leading-relaxed mb-6">
+              Transparency and accountability are what I value most.
+              Athiyayam Trust uses every contribution responsibly.
+            </p>
+
+            <div class="border-t pt-4 text-center">
+              <p class="font-heading text-primary">Anand M</p>
+              <p class="text-sm text-muted">Donor</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVIEW 4 -->
+        <div class="review-slide min-w-full md:min-w-[33.333%] px-4">
+          <div class="bg-white p-8 rounded-2xl shadow h-full">
+
+            <div class="flex justify-center mb-4 text-gold">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="text-muted leading-relaxed mb-6">
+              Athiyayam Trust’s healthcare initiatives have helped
+              many families receive timely medical support.
+            </p>
+
+            <div class="border-t pt-4 text-center">
+              <p class="font-heading text-primary">Lakshmi R</p>
+              <p class="text-sm text-muted">Beneficiary</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVIEW 5 -->
+        <div class="review-slide min-w-full md:min-w-[33.333%] px-4">
+          <div class="bg-white p-8 rounded-2xl shadow h-full">
+
+            <div class="flex justify-center mb-4 text-gold">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="text-muted leading-relaxed mb-6">
+              Working with Athiyayam Trust has been a meaningful
+              and enriching experience.
+            </p>
+
+            <div class="border-t pt-4 text-center">
+              <p class="font-heading text-primary">Arun V</p>
+              <p class="text-sm text-muted">Partner</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVIEW 6 -->
+        <div class="review-slide min-w-full md:min-w-[33.333%] px-4">
+          <div class="bg-white p-8 rounded-2xl shadow h-full">
+
+            <div class="flex justify-center mb-4 text-gold">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="text-muted leading-relaxed mb-6">
+              Their commitment to community development is genuine
+              and inspiring.
+            </p>
+
+            <div class="border-t pt-4 text-center">
+              <p class="font-heading text-primary">Meena S</p>
+              <p class="text-sm text-muted">Volunteer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="relative bg-[#0B3C3A] text-gray-300 overflow-hidden">
+
+  <!-- Soft background glow -->
+  <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-10">
+
+    <!-- TOP GRID -->
+    <div class="grid md:grid-cols-4 gap-12 mb-16">
+
+      <!-- BRAND -->
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <img src="assets/logo.png" class="h-16" alt="Athiyayam Trust Logo">
+          <h3 class="font-heading text-xl text-white">
+            Athiyayam Trust
+          </h3>
+        </div>
+
+        <p class="text-sm leading-relaxed text-gray-400">
+          Athiyayam Charitable Trust is committed to uplifting lives through
+          education, healthcare, and community development initiatives.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="font-heading text-lg text-white mb-6">
+          Quick Links
+        </h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="index.html" class="hover:text-gold">Home</a></li>
+          <li><a href="about.html" class="hover:text-gold">About Us</a></li>
+          <li><a href="gallery.html" class="hover:text-gold">Gallery</a></li>
+          <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+          <li><a href="donate.html" class="hover:text-gold">Donate</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="font-heading text-lg text-white mb-6">
+          Contact
+        </h4>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li>179, Kamban nagar, ondipudur, Coimbatore Tamilnady 641016</li>
+          <li>📧 info@athiyayamtrust.org</li>
+          <li>📞 +91 90929 19000</li>
+          <li>📞 +91 81243 81423</li>
+        </ul>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div>
+        <h4 class="font-heading text-lg text-white mb-6">
+          Newsletter
+        </h4>
+        <p class="text-sm text-gray-400 mb-4">
+          Subscribe to receive updates on our initiatives and impact.
+        </p>
+
+        <form class="flex items-center bg-white rounded-full overflow-hidden">
+          <input type="email" required
+                 placeholder="Your email address"
+                 class="flex-1 px-4 py-3 text-sm text-dark outline-none">
+          <button type="submit"
+                  class="bg-gold px-5 py-3 text-dark text-sm font-medium hover:opacity-90">
+            Send
+          </button>
+        </form>
+
+        <!-- SOCIAL ICONS -->
+        <div class="flex gap-4 mt-6">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <p>
+        © 2025 Athiyayam Charitable Trust. All Rights Reserved.
+      </p>
+      <p class="mt-2 md:mt-0">
+        Designed BY CreativeAdvs
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<a id="whatsappBtn"
+   href="https://wa.me/919092919000"
+   class="hidden fixed bottom-32 right-6
+          bg-green-500 text-white
+          w-14 h-14 rounded-full
+          flex items-center justify-center
+          shadow-lg hover:scale-110 transition"
+   target="_blank">
+  <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+</a>
+
+
+
+<!-- SCROLL TO TOP Arrow -->
+<button id="scrollTopBtn"
+  onclick="scrollToTop()"
+  class="hidden fixed right-6 bottom-16 z-40
+         w-12 h-12 rounded-full
+         bg-gold text-dark
+         flex items-center justify-center
+         shadow-lg hover:opacity-90 transition
+         animate-bounceArrow">
+
+  <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
+</button>
+
+
+
+
+<!-- SCRIPT -->
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+<!-- SCRIPT FOR COUNTER -->
+<script>
+const counters = document.querySelectorAll('.counter');
+let counterStarted = false;
+
+function startCounters() {
+  if (counterStarted) return;
+
+  counters.forEach(counter => {
+    const target = +counter.dataset.target;
+    let count = 0;
+    const increment = target / 120;
+
+    function update() {
+      if (count < target) {
+        count += increment;
+        counter.innerText = Math.ceil(count);
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target;
+      }
+    }
+    update();
+  });
+
+  counterStarted = true;
+}
+
+window.addEventListener('scroll', () => {
+  const firstCounter = document.querySelector('.counter');
+  if (!firstCounter) return;
+
+  const position = firstCounter.getBoundingClientRect().top;
+  if (position < window.innerHeight - 100) {
+    startCounters();
+  }
+});
+</script>
+
+<script>
+    /* =========================================
+       1. HERO SLIDER LOGIC (Safe Mode)
+       ========================================= */
+    const heroSlides = document.querySelectorAll(".hero-slide");
+    const heroDots = document.querySelectorAll(".hero-dot");
+    const heroTitle = document.getElementById("heroTitle");
+    const heroText = document.getElementById("heroText");
+
+    let heroCurrent = 0;
+    let heroTimer;
+
+    function showHeroSlide(index) {
+        // Safety Check: If no slides, stop immediately
+        if (!heroSlides.length) return;
+
+        // Remove active class
+        heroSlides.forEach(s => s.classList.remove("active"));
+        heroDots.forEach(d => d.classList.remove("active"));
+
+        // Add active class (Check if element exists first)
+        if (heroSlides[index]) heroSlides[index].classList.add("active");
+        if (heroDots[index]) heroDots[index].classList.add("active");
+
+        // Animate Text (Only if elements exist)
+        if (heroTitle && heroText && heroSlides[index]) {
+            heroTitle.classList.remove("opacity-100", "translate-y-0");
+            heroText.classList.remove("opacity-100", "translate-y-0");
+
+            setTimeout(() => {
+                heroTitle.textContent = heroSlides[index].dataset.title || "";
+                heroText.textContent = heroSlides[index].dataset.text || "";
+                
+                heroTitle.classList.add("opacity-100", "translate-y-0");
+                heroText.classList.add("opacity-100", "translate-y-0");
+            }, 200);
+        }
+        heroCurrent = index;
+    }
+
+    function nextHeroSlide() {
+        showHeroSlide((heroCurrent + 1) % heroSlides.length);
+    }
+
+    // Only start Hero Slider if slides actually exist on this page
+    if (heroSlides.length > 0) {
+        showHeroSlide(0);
+        heroTimer = setInterval(nextHeroSlide, 6000);
+    }
+
+
+    /* =========================================
+       2. TESTIMONIAL SLIDER LOGIC (Robust)
+       ========================================= */
+    const reviewSlider = document.getElementById("reviewSlider");
+    const reviewSlides = document.querySelectorAll(".review-slide");
+
+    let reviewIndex = 0;
+    let reviewInterval;
+
+    // Helper to get slides per view based on screen size
+    function getSlidesPerView() {
+        return window.innerWidth < 768 ? 1 : 3;
+    }
+
+    function moveReviewSlider() {
+        if (!reviewSlides.length) return;
+
+        reviewIndex++;
+        const slidesPerView = getSlidesPerView();
+
+        // If we reach the end, loop back to start
+        if (reviewIndex > reviewSlides.length - slidesPerView) {
+            reviewIndex = 0;
+        }
+
+        // Calculate movement
+        const slideWidth = reviewSlides[0].offsetWidth;
+        reviewSlider.style.transform = `translateX(-${reviewIndex * slideWidth}px)`;
+    }
+
+    function startReviewSlider() {
+        // Clear any existing timer to prevent speeding up
+        if (reviewInterval) clearInterval(reviewInterval);
+        reviewInterval = setInterval(moveReviewSlider, 3000); // 3 seconds speed
+    }
+
+    function stopReviewSlider() {
+        clearInterval(reviewInterval);
+    }
+
+    // Only start Testimonial Slider if elements exist
+    if (reviewSlider && reviewSlides.length > 0) {
+        
+        // Pause on Hover
+        reviewSlider.addEventListener("mouseenter", stopReviewSlider);
+        reviewSlider.addEventListener("mouseleave", startReviewSlider);
+
+        // Handle Screen Resize (Reset to avoid alignment bugs)
+        window.addEventListener("resize", () => {
+            reviewIndex = 0;
+            reviewSlider.style.transform = `translateX(0px)`;
+        });
+
+        // Start the slider
+        startReviewSlider();
+    }
+</script>
+
+<!-- SCRIPT FOR Whatsapp/Arrow icon-->
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden");
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    scrollBtn.classList.add("hidden");
+    whatsappBtn.classList.add("hidden");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+
+
+
+
+</body>
+</html>

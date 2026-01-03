@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Special Children School Support | Athiyayam Trust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F766E',
+            gold: '#EAB308',
+            accent: '#65A30D',
+            muted: '#6B7280',
+            light: '#F9FAF7'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+  /* --- TEXT ALTERNATING ANIMATION --- */
+  .animate-text-1 {
+      animation: fadeEnglish 6s infinite;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .animate-text-2 {
+      animation: fadeTamil 6s infinite;
+  }
+  @keyframes fadeEnglish {
+      0%, 45% { opacity: 1; }  
+      50%, 95% { opacity: 0; }  
+      100%     { opacity: 1; }
+  }
+  @keyframes fadeTamil {
+      0%, 45% { opacity: 0; }  
+      50%, 95% { opacity: 1; }  
+      100%     { opacity: 0; }
+  }
+  </style>
+
+</head>
+
+<body class="bg-light font-body text-dark">
+
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <a href="../index.html" class="flex items-center gap-3">
+        <img src="../assets/logo.png" class="h-20" alt="Logo">
+        
+        <div class="font-heading text-xl text-primary grid">
+          <h1 class="col-start-1 row-start-1 animate-text-1">Athiyayam Trust</h1>
+          <h1 class="col-start-1 row-start-1 animate-text-2 opacity-0">அத்தியாயம் அறக்கட்டளை</h1>
+        </div>
+      </a>
+
+    <nav class="hidden md:flex gap-8 font-medium items-center">
+      <a href="../index.html" class="hover:text-primary">Home</a>
+      <a href="../about.html" class="hover:text-primary">About</a>
+      <a href="../index.html#events" class="hover:text-primary">Activities</a>
+      <a href="../gallery.html" class="hover:text-primary">Gallery</a>
+      <a href="../contact.html" class="hover:text-primary">Contact</a>
+      <a href="../volunteer.html" class="hover:text-primary">Volunteer</a>
+
+      <a href="../donate.html"
+         class="px-5 py-2 rounded-full bg-primary text-white font-medium hover:opacity-90 transition">
+        Donate
+      </a>
+    </nav>
+
+    <button class="md:hidden text-3xl" onclick="toggleMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <a href="../index.html#hero" class="block px-6 py-3">Home</a>
+    <a href="../about.html" class="block px-6 py-3 font-semibold text-primary">About</a>
+    <a href="../index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="../gallery.html" class="block px-6 py-3">Gallery</a>
+    <a href="../contact.html" class="block px-6 py-3">Contact</a>
+    <a href="../volunteer.html" class="block px-6 py-3">Volunteer</a>
+    <a href="../donate.html" class="block px-6 py-3">Donate</a>
+  </div>
+</header>
+
+
+<section class="relative h-[70vh] flex items-center text-white">
+  <img src="../assets/school/images/event-school.jpg"
+       class="absolute inset-0 w-full h-full object-cover">
+
+
+ <!-- <div class="relative max-w-6xl mx-auto px-6">
+    <h2 class="font-heading text-4xl md:text-5xl mb-4">
+      Special Children School Support
+    </h2>
+    <p class="text-lg max-w-2xl">
+      Providing essential supplies, medical aid, and care to the Star Special Children Care Center.
+    </p>
+  </div>-->
+</section>
+
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+
+    <div class="md:col-span-2">
+      
+    <h2 class="font-heading text-4xl md:text-5xl mb-4">
+      Special Children School Support
+    </h2>
+
+      <h3 class="font-heading text-3xl text-primary mb-6">
+        About the Event
+      </h3>
+
+      <p class="text-muted leading-relaxed mb-6">
+        <strong>COIMBATORE:</strong> In a heartwarming display of community service, youth in Coimbatore have united to form the "Athiyayam Charitable Trust" with the aim of focusing on social welfare activities and providing enhanced services to the community.
+      </p>
+
+      <p class="text-muted leading-relaxed mb-6">
+        Established with a focus on medicine, education, and social welfare, the trust held its inaugural social service event at the <strong>Star Special Children Care and Rehabilitation Center</strong> located in Singanallur.
+      </p>
+
+      <p class="text-muted leading-relaxed mb-6">
+        The event was presided over by the Trust's Founder, <strong>Mr. Rajasekar</strong>, with Managing Trustees Mr. Nagaraj and Mr. Raj Mohan leading the proceedings. During the event, the administrators of Athiyayam Trust donated essential supplies required for the special school and rehabilitation center. Following the donation, lunch was served to everyone present.
+      </p>
+
+      <blockquote class="border-l-4 border-gold pl-6 italic text-gray-700 bg-gray-50 p-4 rounded-r-lg mb-10">
+        "While underprivileged families receive various forms of assistance through NGOs, access to medical aid for everyone remains a significant challenge. Therefore, our trust has decided to place extra emphasis on providing medical assistance."
+        <footer class="mt-2 font-bold text-primary not-italic">- Trust Administrators</footer>
+      </blockquote>
+
+      <p class="text-muted leading-relaxed mb-10">
+        The event was attended by the Trust's Treasurer Mr. Hadley, along with Trustees Mr. Karthik, Mr. Venkatesh, and Mr. Sathishkumar.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-primary">
+          📦 <strong>Essential Supplies</strong><br>Donated to Rehabilitation Center
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-primary">
+          🍛 <strong>Annadhanam</strong><br>Lunch served to all children
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-primary">
+          🏥 <strong>Medical Focus</strong><br>Emphasis on future medical aid
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow border-l-4 border-primary">
+          🤝 <strong>Youth Initiative</strong><br>United for social welfare
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow h-fit">
+      <h4 class="font-heading text-xl text-primary mb-6">
+        Event Snapshot
+      </h4>
+
+      <ul class="space-y-4 text-sm text-muted">
+        <li><strong>Date:</strong> October 30, 2025</li>
+        <li><strong>Location:</strong> Star Special Children Care, Singanallur</li>
+        <li><strong>Founder:</strong> Mr. Rajasekar</li>
+        <li><strong>Managing Trustees:</strong> Mr. Nagaraj, Mr. Raj Mohan</li>
+      </ul>
+
+      <a href="../donate.html"
+         class="block mt-8 text-center bg-gold text-dark px-6 py-3 rounded-full font-medium">
+        Support Our Initiatives
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="font-heading text-3xl text-primary mb-10 text-center">
+      Event Photos
+    </h3>
+    <p class="text-center text-sm text-gray-500 mb-8">(Click on any image to zoom in)</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="../assets/school/images/event-11.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="../assets/school/images/event-14.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="../assets/school/images/event-16.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="../assets/school/images/event-50.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="../assets/school/images/event-22.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="../assets/school/images/event-25.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="../assets/school/images/event-30.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="../assets/school/images/event-35.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow hover:scale-105 transition cursor-pointer">
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-light">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="font-heading text-3xl text-primary mb-10">
+      Newspaper Coverage
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <img src="../assets/school/press/IMG-20251128-WA0070.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow cursor-pointer hover:opacity-90">
+      <img src="../assets/school/press/IMG-20251128-WA0073.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow cursor-pointer hover:opacity-90">
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="font-heading text-3xl text-primary mb-10">
+      Event Videos
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/H557qxsV43w"
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/H557qxsV43w"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-primary text-white text-center">
+  <h3 class="font-heading text-3xl mb-6">
+    Help Us Continue Our Medical Mission
+  </h3>
+  <p class="mb-8">
+    Your support enables us to reach more underprivileged communities.
+  </p>
+  <a href="../donate.html"
+     class="bg-gold text-dark px-10 py-3 rounded-full font-medium">
+    Donate Now
+  </a>
+</section>
+
+<footer class="bg-[#0B3C3A] text-gray-300 text-center py-8">
+  © 2025 Athiyayam Charitable Trust
+</footer>
+
+<div id="lightbox"
+     class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[100] cursor-pointer"
+     onclick="closeLightbox()">
+  <button class="absolute top-5 right-5 text-white text-4xl">&times;</button>
+  <img id="lightboxImg" class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl transform scale-100 transition-transform duration-300" onclick="event.stopPropagation()"> </div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+
+/* Lightbox Logic */
+function openLightbox(src) {
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  img.src = src;
+  
+  lightbox.classList.remove("hidden");
+  lightbox.classList.add("flex");
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  lightbox.classList.add("hidden");
+  lightbox.classList.remove("flex");
+}
+</script>
+
+</body>
+</html>

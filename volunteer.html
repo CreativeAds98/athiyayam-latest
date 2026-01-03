@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Volunteer With Us | Athiyayam Trust</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@600;800&family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F766E', /* Teal/Green Theme */
+            gold: '#EAB308',
+            light: '#F9FAF7',
+            dark: '#1a2e45'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+   <style>
+  /* --- TEXT ALTERNATING ANIMATION --- */
+
+/* English Text: Visible first, then hides */
+.animate-text-1 {
+    animation: fadeEnglish 6s infinite;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Tamil Text: Hidden first, then shows */
+.animate-text-2 {
+    animation: fadeTamil 6s infinite;
+}
+
+@keyframes fadeEnglish {
+    0%, 45% { opacity: 1; }  /* Visible for first 45% */
+    50%, 95% { opacity: 0; }  /* Hidden for second half */
+    100%     { opacity: 1; }
+}
+
+@keyframes fadeTamil {
+    0%, 45% { opacity: 0; }  /* Hidden for first 45% */
+    50%, 95% { opacity: 1; }  /* Visible for second half */
+    100%     { opacity: 0; }
+}
+</style>
+
+</head>
+
+<body class="bg-light font-body text-gray-800">
+
+<!-- NAVBAR -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" class="h-20" alt="Logo">
+        
+        <div class="font-heading text-xl text-primary grid">
+          
+          <h1 class="col-start-1 row-start-1 animate-text-1">
+            Athiyayam Trust
+          </h1>
+          
+          <h1 class="col-start-1 row-start-1 animate-text-2 opacity-0">
+            அத்தியாயம் அறக்கட்டளை
+          </h1>
+          
+        </div>
+      </a>
+
+    <nav class="hidden md:flex gap-8 font-medium items-center">
+      <a href="index.html" class="text-primary font-semibold">Home</a>
+      <a href="about.html" class="hover:text-primary">About</a>
+      <a href="index.html#activities" class="hover:text-primary">Activities</a>
+      <a href="gallery.html" class="hover:text-primary">Gallery</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+      <a href="volunteer.html" class="hover:text-primary">Volunteer</a>
+        <!-- Donate -->
+      <a href="donate.html"
+        class="px-5 py-2 rounded-full bg-primary text-white font-medium hover:opacity-90 transition">
+        Donate
+      </a>
+    </nav>
+
+    <button class="md:hidden text-3xl" onclick="toggleMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <a href="index.html#hero" class="block px-6 py-3">Home</a>
+    <a href="about.html" class="block px-6 py-3">About</a>
+    <a href="index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="gallery.html" class="block px-6 py-3">Gallery</a>
+    <a href="contact.html" class="block px-6 py-3">Contact</a>
+    <a href="volunteer.html" class="block px-6 py-3">Volunteer</a>
+    <a href="donate.html" class="block px-6 py-3">Donate</a>
+  </div>
+</header>
+
+<section class="relative bg-primary py-20 text-center text-white bg-[url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2074')] bg-cover bg-center bg-no-repeat bg-blend-multiply">
+    <div class="max-w-4xl mx-auto px-6">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">Become a Volunteer</h1>
+        <p class="text-lg opacity-90">Join our hands to uplift the community. Your time and skills can change lives.</p>
+    </div>
+</section>
+
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+        
+        <div>
+            <h2 class="font-heading text-3xl text-primary font-bold mb-6">Why Volunteer With Us?</h2>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                Volunteering is not just about giving time; it's about making a tangible difference. At Athiyayam Trust, we welcome individuals from all walks of life to contribute their skills in education, healthcare, and community development.
+            </p>
+
+            <div class="space-y-6">
+                <div class="flex gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                    <div class="text-gold text-3xl pt-1"><ion-icon name="heart-outline"></ion-icon></div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-dark">Make an Impact</h3>
+                        <p class="text-sm text-gray-500">Directly help underprivileged families and children build a better future.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                    <div class="text-gold text-3xl pt-1"><ion-icon name="people-outline"></ion-icon></div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-dark">Join a Community</h3>
+                        <p class="text-sm text-gray-500">Connect with like-minded changemakers and grow your network.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                    <div class="text-gold text-3xl pt-1"><ion-icon name="ribbon-outline"></ion-icon></div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-dark">Gain Experience</h3>
+                        <p class="text-sm text-gray-500">Receive a certificate of appreciation and gain valuable field experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
+            <h3 class="text-2xl font-bold text-dark mb-6">Volunteer Registration</h3>
+            
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" name="name" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="+91 98765 43210" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <input type="email" name="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="john@example.com" required>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
+                    <select name="interest" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none bg-white">
+                        <option>Teaching / Education</option>
+                        <option>Medical Camps</option>
+                        <option>Event Management</option>
+                        <option>Social Media / Design</option>
+                        <option>Fundraising</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Your Message (Why do you want to join?)</label>
+                    <textarea name="message" rows="3" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="Briefly tell us about yourself..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-primary text-white font-bold py-3 rounded-md hover:bg-opacity-90 transition shadow-md">
+                    Submit Application
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+
+  </div>
+</section>
+
+<a id="whatsappBtn"
+   href="https://wa.me/919092919000"
+   class="hidden fixed bottom-32 right-6
+          bg-green-500 text-white
+          w-14 h-14 rounded-full
+          flex items-center justify-center
+          shadow-lg hover:scale-110 transition z-40"
+   target="_blank">
+  <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+</a>
+
+<button id="scrollTopBtn"
+  onclick="scrollToTop()"
+  class="hidden fixed right-6 bottom-16 z-40
+         w-12 h-12 rounded-full
+         bg-gold text-dark
+         flex items-center justify-center
+         shadow-lg hover:opacity-90 transition">
+  <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
+</button>
+
+<footer class="bg-[#0B3C3A] text-gray-300 text-center py-8">
+  © 2025 Athiyayam Charitable Trust
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+
+/* Scroll & WhatsApp Logic */
+const scrollBtn = document.getElementById("scrollTopBtn");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden");
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    scrollBtn.classList.add("hidden");
+    whatsappBtn.classList.add("hidden");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
