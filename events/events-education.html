@@ -71,7 +71,7 @@
     <nav class="hidden md:flex gap-8 font-medium items-center">
       <a href="../index.html" class="hover:text-primary">Home</a>
       <a href="../about.html" class="hover:text-primary">About</a>
-      <a href="../index.html#events" class="hover:text-primary">Activities</a>
+      <a href="../activities.html" class="hover:text-primary">Activities</a>
       <a href="../gallery.html" class="hover:text-primary">Gallery</a>
       <a href="../contact.html" class="hover:text-primary">Contact</a>
       <a href="../volunteer.html" class="hover:text-primary">Volunteer</a>
@@ -89,8 +89,8 @@
 
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
     <a href="../index.html#hero" class="block px-6 py-3">Home</a>
-    <a href="../about.html" class="block px-6 py-3 font-semibold text-primary">About</a>
-    <a href="../index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="../about.html" class="block px-6 py-3 text-primary">About</a>
+    <a href="../activities.html" class="block px-6 py-3">Activities</a>
     <a href="../gallery.html" class="block px-6 py-3">Gallery</a>
     <a href="../contact.html" class="block px-6 py-3">Contact</a>
     <a href="../volunteer.html" class="block px-6 py-3">Volunteer</a>
@@ -207,36 +207,112 @@
 </section>
 
 <section class="py-20 bg-light">
-  <div class="max-w-6xl mx-auto px-6 text-center">
+  <div class="max-w-7xl mx-auto px-6 text-center">
     <h3 class="font-heading text-3xl text-primary mb-10">
       Newspaper Coverage
     </h3>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <img src="../assets/school/press/IMG-20251128-WA0070.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow cursor-pointer hover:opacity-90">
-      <img src="../assets/school/press/IMG-20251128-WA0073.jpg" onclick="openLightbox(this.src)" class="rounded-xl shadow cursor-pointer hover:opacity-90">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      
+      <img src="../assets/press/press1.jpg" 
+           onclick="openLightbox(this.src)" 
+           class="rounded-xl shadow-sm cursor-pointer hover:scale-105 transition h-64 w-full object-cover border border-gray-200">
+
+      <img src="../assets/press/press2.jpg" 
+           onclick="openLightbox(this.src)" 
+           class="rounded-xl shadow-sm cursor-pointer hover:scale-105 transition h-64 w-full object-cover border border-gray-200">
+
+      <img src="../assets/press/press3.jpg" 
+           onclick="openLightbox(this.src)" 
+           class="rounded-xl shadow-sm cursor-pointer hover:scale-105 transition h-64 w-full object-cover border border-gray-200"
+           alt="Press Clipping 3">
+
+      <img src="../assets/press/press4.jpg" 
+           onclick="openLightbox(this.src)" 
+           class="rounded-xl shadow-sm cursor-pointer hover:scale-105 transition h-64 w-full object-cover border border-gray-200"
+           alt="Press Clipping 4">
+
+      <img src="../assets/press/press5.jpg" 
+           onclick="openLightbox(this.src)" 
+           class="rounded-xl shadow-sm cursor-pointer hover:scale-105 transition h-64 w-full object-cover border border-gray-200"
+           alt="Press Clipping 5">
+
     </div>
   </div>
 </section>
 
 <section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 text-center">
+  <div class="max-w-[1400px] mx-auto px-6 text-center">
     <h3 class="font-heading text-3xl text-primary mb-10">
       Event Videos
     </h3>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/H557qxsV43w"
-        title="YouTube video player" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/rBzlot2tMZY"
+          title="Video 1" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
 
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/H557qxsV43w"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/1Dy2cB_qrCM"
+          title="Video 2" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/Rcpy5FThKX0"
+          title="Video 3" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/JjyEH4dtSCo"
+          title="Video 4" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/5qBhD9hwCgY"
+          title="Video 5" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/rBzlot2tMZY"
+          title="Video 6" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/YsygJHxbxDY"
+          title="Video 7" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 group">
+        <iframe class="w-full aspect-video"
+          src="https://www.youtube.com/embed/7ZxlvrHMY1k"
+          title="Video 8" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+
     </div>
   </div>
 </section>
@@ -257,6 +333,33 @@
 <footer class="bg-[#0B3C3A] text-gray-300 text-center py-8">
   © 2025 Athiyayam Charitable Trust
 </footer>
+
+<!-- WHATSAPP BUTTON -->
+<a id="whatsappBtn"
+   href="https://wa.me/919092919000"
+   class="hidden fixed bottom-32 right-6
+          bg-green-500 text-white
+          w-14 h-14 rounded-full
+          flex items-center justify-center
+          shadow-lg hover:scale-110 transition"
+   target="_blank">
+  <ion-icon name="logo-whatsapp" class="text-3xl"></ion-icon>
+</a>
+
+
+
+<!-- SCROLL TO TOP Arrow -->
+<button id="scrollTopBtn"
+  onclick="scrollToTop()"
+  class="hidden fixed right-6 bottom-16 z-40
+         w-12 h-12 rounded-full
+         bg-gold text-dark
+         flex items-center justify-center
+         shadow-lg hover:opacity-90 transition
+         animate-bounceArrow">
+
+  <ion-icon name="chevron-up-outline" class="text-2xl"></ion-icon>
+</button>
 
 <div id="lightbox"
      class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[100] cursor-pointer"
@@ -283,6 +386,29 @@ function closeLightbox() {
   const lightbox = document.getElementById("lightbox");
   lightbox.classList.add("hidden");
   lightbox.classList.remove("flex");
+}
+</script>
+
+<!-- SCRIPT FOR Whatsapp/Arrow icon-->
+<script>
+const scrollBtn = document.getElementById("scrollTopBtn");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden");
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    scrollBtn.classList.add("hidden");
+    whatsappBtn.classList.add("hidden");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 </script>
 

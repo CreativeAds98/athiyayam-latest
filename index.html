@@ -147,11 +147,42 @@
 }
 </style>
 
+<style>
+/* --- LOGO FILL ANIMATION --- */
+.animate-logo-fill {
+    animation: fillUp 2.5s ease-in-out infinite;
+}
+
+@keyframes fillUp {
+    0% { height: 0%; }
+    50% { height: 50%; }
+    100% { height: 100%; }
+}
+
+/* Optional: Hide scrollbar during load */
+body.loading { overflow: hidden; }
+</style>
+
 
 
 </head>
 
 <body class="bg-light font-body text-dark">
+
+<!-- PRELOADER -->
+  <div id="preloader" class="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center">
+    
+    <div class="relative w-32 h-32"> <img src="assets/logo.png" class="absolute inset-0 w-full h-full object-contain opacity-20 grayscale">
+        
+        <div class="absolute inset-x-0 bottom-0 h-0 overflow-hidden animate-logo-fill">
+            <img src="assets/logo.png" class="absolute bottom-0 left-0 w-32 h-32 object-contain max-w-none">
+        </div>
+
+    </div>
+
+    <p class="mt-4 text-primary font-heading font-bold tracking-widest text-sm animate-pulse">LOADING...</p>
+
+</div>
 
 <!-- NAVBAR -->
 <header class="bg-white shadow sticky top-0 z-50">
@@ -175,7 +206,7 @@
     <nav class="hidden md:flex gap-8 font-medium items-center">
       <a href="index.html" class="text-primary font-semibold">Home</a>
       <a href="about.html" class="hover:text-primary">About</a>
-      <a href="index.html#activities" class="hover:text-primary">Activities</a>
+      <a href="activities.html" class="hover:text-primary">Activities</a>
       <a href="gallery.html" class="hover:text-primary">Gallery</a>
       <a href="contact.html" class="hover:text-primary">Contact</a>
       <a href="volunteer.html" class="hover:text-primary">Volunteer</a>
@@ -195,7 +226,7 @@
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
     <a href="index.html#hero" class="block px-6 py-3">Home</a>
     <a href="about.html" class="block px-6 py-3">About</a>
-    <a href="index.html#activities" class="block px-6 py-3">Activities</a>
+    <a href="activities.html" class="block px-6 py-3">Activities</a>
     <a href="gallery.html" class="block px-6 py-3 ">Gallery</a>
     <a href="contact.html" class="block px-6 py-3">Contact</a>
     <a href="volunteer.html" class="block px-6 py-3">Volunteer</a>
@@ -250,20 +281,20 @@
     </div>
   </div>
 
-  <!-- ARROWS -->
-  <button onclick="prevSlide()"
-          class="absolute left-6 top-1/2 -translate-y-1/2 z-20
-                 w-12 h-12 rounded-full bg-white/20 text-white
-                 flex items-center justify-center hover:bg-white/40">
-    <ion-icon name="chevron-back-outline" class="text-2xl"></ion-icon>
-  </button>
+  <!-- Arrow Hero BUTTONS -->
+ <button onclick="prevHeroSlide()" 
+        class="absolute left-6 top-1/2 -translate-y-1/2 z-20
+               w-12 h-12 rounded-full bg-white/20 text-white
+               flex items-center justify-center hover:bg-white/40 backdrop-blur-sm transition">
+  <ion-icon name="chevron-back-outline" class="text-2xl"></ion-icon>
+</button>
 
-  <button onclick="nextSlide()"
-          class="absolute right-6 top-1/2 -translate-y-1/2 z-20
-                 w-12 h-12 rounded-full bg-white/20 text-white
-                 flex items-center justify-center hover:bg-white/40">
-    <ion-icon name="chevron-forward-outline" class="text-2xl"></ion-icon>
-  </button>
+<button onclick="nextHeroSlide()" 
+        class="absolute right-6 top-1/2 -translate-y-1/2 z-20
+               w-12 h-12 rounded-full bg-white/20 text-white
+               flex items-center justify-center hover:bg-white/40 backdrop-blur-sm transition">
+  <ion-icon name="chevron-forward-outline" class="text-2xl"></ion-icon>
+</button>
 
   <!-- DOTS -->
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
@@ -625,7 +656,7 @@
 
     <!-- View All -->
     <div class="text-center mt-16">
-      <a href="events.html"
+      <a href="#"
          class="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full hover:opacity-90 transition">
         View All Activities
         <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -937,13 +968,13 @@
 
         <!-- SOCIAL ICONS -->
         <div class="flex gap-4 mt-6">
-          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
+          <a href="https://www.facebook.com/" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
             <ion-icon name="logo-facebook"></ion-icon>
           </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
+          <a href="https://www.instagram.com/" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
             <ion-icon name="logo-instagram"></ion-icon>
           </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
+          <a href="https://www.youtube.com/" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-dark transition">
             <ion-icon name="logo-youtube"></ion-icon>
           </a>
         </div>
@@ -1170,6 +1201,26 @@ function scrollToTop() {
     behavior: "smooth"
   });
 }
+</script>
+
+
+<script>
+    // 1. Lock scroll
+    document.body.classList.add('loading');
+
+    // 2. Remove loader when page is fully loaded
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        
+        // Wait a moment so the user sees the logo full
+        setTimeout(() => {
+            preloader.classList.add('transition-opacity', 'duration-500', 'opacity-0', 'pointer-events-none');
+            document.body.classList.remove('loading');
+            
+            // Cleanup from DOM
+            setTimeout(() => preloader.remove(), 500);
+        }, 1500); // Adjust time to let animation play at least once
+    });
 </script>
 
 
