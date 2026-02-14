@@ -160,45 +160,85 @@
         <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
             <h3 class="text-2xl font-bold text-dark mb-6">Volunteer Registration</h3>
             
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                        <input type="text" name="name" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="John Doe" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                        <input type="tel" name="phone" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="+91 98765 43210" required>
-                    </div>
-                </div>
+        <form 
+          action="https://api.web3forms.com/submit" 
+          method="POST" 
+          class="space-y-4"
+        >
 
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                    <input type="email" name="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="john@example.com" required>
-                </div>
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="82ddfa77-cc30-4b61-8cb5-2e5a3ede8950">
 
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
-                    <select name="interest" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none bg-white">
-                        <option>Teaching / Education</option>
-                        <option>Medical Camps</option>
-                        <option>Event Management</option>
-                        <option>Social Media / Design</option>
-                        <option>Fundraising</option>
-                    </select>
-                </div>
+          <!-- Optional Email Subject -->
+          <input type="hidden" name="subject" value="Volunteer Application Form">
 
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Your Message (Why do you want to join?)</label>
-                    <textarea name="message" rows="3" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" placeholder="Briefly tell us about yourself..."></textarea>
-                </div>
+          <!-- Optional Sender Name -->
+          <input type="hidden" name="from_name" value="Website Application">
 
-                <button type="submit" class="w-full bg-primary text-white font-bold py-3 rounded-md hover:bg-opacity-90 transition shadow-md">
-                    Submit Application
-                </button>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <input 
+                type="text" 
+                name="name"
+                class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" 
+                placeholder="John Doe" 
+                required>
+            </div>
 
-            </form>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input 
+                type="tel" 
+                name="phone"
+                class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" 
+                placeholder="+91 98765 43210" 
+                required>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <input 
+              type="email" 
+              name="email"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" 
+              placeholder="john@example.com" 
+              required>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
+            <select 
+              name="interest"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none bg-white">
+              <option>Teaching / Education</option>
+              <option>Medical Camps</option>
+              <option>Event Management</option>
+              <option>Social Media / Design</option>
+              <option>Fundraising</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Your Message (Why do you want to join?)
+            </label>
+            <textarea 
+              name="message"
+              rows="3" 
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary outline-none" 
+              placeholder="Briefly tell us about yourself..."></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full bg-primary text-white font-bold py-3 rounded-md hover:bg-opacity-90 transition shadow-md">
+            Submit Application
+          </button>
+
+        </form>
+
         </div>
 
     </div>
